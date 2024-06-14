@@ -10,11 +10,21 @@ const UserInfo = () => {
             try {
                 const token = await getAccessToken();
                 console.log("Client side toeken :  " + token);
-                //    const response = await fetch("https://graph.microsoft.com/v1.0/me", {
-                //        headers: {
-                //            Authorization: `Bearer ${token}`,
-                //        },
-                //    });
+                const response = await fetch('https://localhost:7136/api/auth/getProfileOnBehalfOf', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ token })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+                console.log("Server response data: ", data);
+                setUser(data);
 
                 // const data = await response.json();
                 // setUser(data);

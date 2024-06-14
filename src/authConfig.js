@@ -4,9 +4,9 @@ import { PublicClientApplication } from "@azure/msal-browser";
 
 export const msalConfig = {
     auth: {
-        clientId: "6375753e-3b1b-4eac-a731-501b08b3bbf4",
+        clientId: "ed6c71d9-2df2-4a7c-b7d7-bb4b412c7841",
         authority: "https://login.microsoftonline.com/42f65d85-0044-4e88-9d17-5aeff505072a",
-        redirectUri: "https://lively-mushroom-0857d2900.5.azurestaticapps.net", // or your production URL
+        redirectUri: "https://ashy-tree-03d0b1100.5.azurestaticapps.net/", // or your production URL
     },
     cache: {
         cacheLocation: "localStorage",
