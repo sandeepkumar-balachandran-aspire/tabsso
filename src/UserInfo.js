@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getAccessToken } from "./Auth";
 
 const UserInfo = () => {
-    const [user] = useState(null);
+    const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
